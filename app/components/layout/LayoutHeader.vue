@@ -6,7 +6,6 @@
       <AppButton
         variant="icon-outline"
         class="sm:!hidden w-11 h-11"
-        aria-label="منو"
         @click="mobileOpen = !mobileOpen"
       >
         <MenuIcon :size="14" />
@@ -17,11 +16,7 @@
       تماس
       <PhoneCall :size="14" />
     </AppButton>
-    <AppButton
-      variant="icon-outline"
-      class="sm:!hidden w-11 h-11"
-      aria-label="تماس"
-    >
+    <AppButton variant="icon-outline" class="sm:!hidden w-11 h-11">
       <PhoneCall :size="18" />
     </AppButton>
   </div>

@@ -21,5 +21,6 @@ export {
   Twitter,
   Instagram,
   ChevronLeft,
+  SearchIcon,
 } from "lucide-vue-next";
 export { TelegramIcon } from "vue3-simple-icons";
