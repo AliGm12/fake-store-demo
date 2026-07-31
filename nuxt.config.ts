@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
+  routeRules: {
+    "/": { redirect: "/products" },
+  },
+  imports: {
+    dirs: ["types"],
+  },
   css: ["~/assets/styles/main.scss"],
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
@@ -14,6 +20,10 @@ export default defineNuxtConfig({
     },
     {
       path: "~/components/layout",
+      pathPrefix: false,
+    },
+    {
+      path: "~/components/products",
       pathPrefix: false,
     },
   ],
