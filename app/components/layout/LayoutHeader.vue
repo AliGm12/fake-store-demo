@@ -5,7 +5,7 @@
     <div class="lg:block w-[107px]">
       <AppButton
         variant="icon-outline"
-        class="sm:!hidden"
+        class="sm:!hidden w-11 h-11"
         aria-label="منو"
         @click="mobileOpen = !mobileOpen"
       >
@@ -17,7 +17,11 @@
       تماس
       <PhoneCall :size="14" />
     </AppButton>
-    <AppButton variant="icon-outline" class="sm:!hidden" aria-label="تماس">
+    <AppButton
+      variant="icon-outline"
+      class="sm:!hidden w-11 h-11"
+      aria-label="تماس"
+    >
       <PhoneCall :size="18" />
     </AppButton>
   </div>

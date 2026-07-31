@@ -11,6 +11,7 @@
         'opacity-50 cursor-not-allowed': disabled || loading,
         'inline-flex': true,
       },
+      $props.class,
     ]"
   >
     <svg
@@ -44,6 +45,7 @@ interface Props {
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   loading?: boolean;
+  class?: string;
 }
 
 const emit = defineEmits<{
@@ -62,6 +64,7 @@ const props = withDefaults(defineProps<Props>(), {
   size: "md",
   disabled: false,
   loading: false,
+  class: "",
 });
 </script>
 
@@ -96,6 +99,6 @@ const props = withDefaults(defineProps<Props>(), {
   @apply bg-transparent text-gray-800 hover:bg-gray-100;
 }
 .icon-outline {
-  @apply bg-white border border-pink-600 text-pink-600 rounded-xl w-11 h-11 p-0 hover:bg-pink-50;
+  @apply bg-white border border-pink-600 text-pink-600 rounded-xl hover:bg-pink-50;
 }
 </style>
