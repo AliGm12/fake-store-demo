@@ -3,7 +3,7 @@ export const useProducts = () => {
     data: products,
     pending: loading,
     error,
-  } = useFetch<Product[]>("https://fakestoreapi.com/products");
+  } = useFetch<Product[]>("https://fakestoreapi.com/products/");
 
   return {
     products,

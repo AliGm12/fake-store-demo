@@ -13,7 +13,7 @@
         class="text-[#E20054] absolute right-3 top-1/2 -translate-y-1/2 z-10"
       />
       <div
-        class="absolute right-10 top-1/2 -translate-y-1/2 w-[2px] h-7 bg-[#D1DBE8] z-10"
+        class="absolute right-10 top-1/2 -translate-y-1/2 w-[1px] h-7 bg-[#D1DBE8] z-10"
       ></div>
       <input
         v-model="searchQuery"
@@ -28,7 +28,8 @@
 
 <script setup lang="ts">
 import { SearchIcon } from "~/components/icons";
-const searchQuery = ref("");
+
+const searchQuery = defineModel<string>("searchQuery");
 </script>
 
 <style scoped></style>

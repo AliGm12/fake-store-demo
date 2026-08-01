@@ -22,5 +22,13 @@ export {
   Instagram,
   ChevronLeft,
   SearchIcon,
+  ChevronDown,
+  ChevronUp,
+  ArrowUpNarrowWide,
+  ArrowDownNarrowWide,
+  Tag,
+  ArrowDown,
+  ArrowUp,
+  XIcon,
 } from "lucide-vue-next";
 export { TelegramIcon } from "vue3-simple-icons";
