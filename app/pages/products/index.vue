@@ -55,6 +55,12 @@
           :product="product"
         />
       </div>
+      <UEmpty
+        v-if="(filteredProducts?.length ?? 0) === 0"
+        icon="i-lucide-search-x"
+        title="نتیجه‌ای پیدا نشد"
+        description="محصولی با این فیلترها یافت نشد. فیلترهای خود را تغییر دهید."
+      />
     </div>
   </div>
 </template>
