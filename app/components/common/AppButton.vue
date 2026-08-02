@@ -3,16 +3,7 @@
     :type="type"
     :disabled="disabled || loading"
     @click="onClick"
-    class="app-btn"
-    :class="[
-      variant,
-      variant !== 'icon-outline' ? size : '',
-      {
-        'opacity-50 cursor-not-allowed': disabled || loading,
-        'inline-flex': true,
-      },
-      $props.class,
-    ]"
+    :class="buttonClasses"
   >
     <svg
       v-if="loading"
@@ -37,16 +28,23 @@
     <slot v-else />
   </button>
 </template>
-
 <script setup lang="ts">
+import { twMerge } from "tailwind-merge";
+
 interface Props {
   type?: "button" | "submit" | "reset";
-  variant?: "primary" | "secondary" | "danger" | "ghost" | "icon-outline";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   loading?: boolean;
   class?: string;
 }
+const props = withDefaults(defineProps<Props>(), {
+  type: "button",
+  size: "md",
+  disabled: false,
+  loading: false,
+  class: "",
+});
 
 const emit = defineEmits<{
   (e: "click", event: MouseEvent): void;
@@ -54,51 +52,24 @@ const emit = defineEmits<{
 
 function onClick(event: MouseEvent) {
   if (props.loading || props.disabled) return;
-
   emit("click", event);
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  type: "button",
-  variant: "primary",
-  size: "md",
-  disabled: false,
-  loading: false,
-  class: "",
-});
+const baseClasses =
+  "inline-flex items-center justify-center gap-2 rounded-2xl font-medium transition bg-blue-600 text-white cursor-pointer hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500";
+
+const sizeClasses: Record<NonNullable<Props["size"]>, string> = {
+  sm: "px-4 py-1.5 text-sm",
+  md: "px-7 py-2.5 text-sm",
+  lg: "px-8 py-3 text-base",
+};
+
+const buttonClasses = computed(() =>
+  twMerge(
+    baseClasses,
+    sizeClasses[props.size!],
+    props.disabled || props.loading ? "opacity-50 cursor-not-allowed" : "",
+    props.class,
+  ),
+);
 </script>
-
-<style scoped>
-.app-btn {
-  @apply items-center justify-center gap-2 rounded-xl font-medium transition
-         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500;
-}
-
-/* sizes */
-.sm {
-  @apply px-4 py-1.5 text-sm;
-}
-.md {
-  @apply px-7 py-2.5 text-sm;
-}
-.lg {
-  @apply px-8 py-3 text-base;
-}
-
-/* variants */
-.primary {
-  @apply bg-blue-600 text-white hover:opacity-90;
-}
-.secondary {
-  @apply bg-gray-100 text-gray-800 hover:bg-gray-200;
-}
-.danger {
-  @apply bg-[#E20054] text-white hover:opacity-90;
-}
-.ghost {
-  @apply bg-transparent text-gray-800 hover:bg-gray-100;
-}
-.icon-outline {
-  @apply bg-white border border-pink-600 text-pink-600 rounded-xl hover:bg-pink-50;
-}
-</style>

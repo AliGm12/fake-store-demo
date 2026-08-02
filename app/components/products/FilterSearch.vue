@@ -13,7 +13,7 @@
         class="text-[#E20054] absolute right-3 top-1/2 -translate-y-1/2 z-10"
       />
       <div
-        class="absolute right-10 top-1/2 -translate-y-1/2 w-[1px] h-7 bg-[#D1DBE8] z-10"
+        class="absolute right-10 top-1/2 -translate-y-1/2 w-px h-7 bg-[#D1DBE8] z-10"
       ></div>
       <input
         v-model="searchQuery"
@@ -22,7 +22,7 @@
         class="w-full bg-transparent py-2.5 pl-10 pr-12 text-sm text-right outline-none text-gray-700 placeholder-gray-400"
       />
     </div>
-    <AppButton variant="danger">جستجو</AppButton>
+    <AppButton class="rounded-xl bg-(--secondary-color)">جستجو</AppButton>
   </div>
 </template>
 
