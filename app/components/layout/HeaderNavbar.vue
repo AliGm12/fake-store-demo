@@ -2,26 +2,25 @@
   <nav
     class="flex items-center gap-6 font-medium text-[15px] text-nowrap drop-shadow-[0_2px_2px_rgba(0,0,0,0.08)]"
   >
-    <NuxtLink to="#" class="flex items-center gap-2">
-      <Blocks :size="14" />
-      <span>لیست محصولات</span>
-    </NuxtLink>
-    <NuxtLink to="#" class="flex items-center gap-2">
-      <BookOpen :size="14" />
-      <span>دریافت مشاوره</span>
-    </NuxtLink>
-    <NuxtLink to="#" class="flex items-center gap-2">
-      <MessageCircleQuestion :size="14" />
-      <span>سوالات متداول</span>
-    </NuxtLink>
-    <NuxtLink
-      to="#"
-      class="flex items-center gap-2 rounded-full text-pink-700"
-      active-class="text-primary after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary"
+    <!--change to button due to static routes-->
+    <button
+      v-for="item in navItems"
+      :key="item.key"
+      type="button"
+      class="relative flex items-center gap-2"
+      :class="
+        activeItem === item.key ? 'text-(--secondary-color)' : 'text-[#0A2A51]'
+      "
+      @click="activeItem = item.key"
     >
-      <Phone :size="14" />
-      <span>تماس با ما</span>
-    </NuxtLink>
+      <component :is="item.icon" :size="14" />
+      <span class="cursor-pointer">{{ item.label }}</span>
+
+      <span
+        v-if="activeItem === item.key"
+        class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-(--secondary-color)"
+      />
+    </button>
   </nav>
 </template>
 
@@ -32,6 +31,13 @@ import {
   MessageCircleQuestion,
   Phone,
 } from "~/components/icons";
-</script>
 
-<style scoped></style>
+const navItems = [
+  { key: "products", label: "لیست محصولات", icon: Blocks },
+  { key: "consulting", label: "دریافت مشاوره", icon: BookOpen },
+  { key: "faq", label: "سوالات متداول", icon: MessageCircleQuestion },
+  { key: "contact", label: "تماس با ما", icon: Phone },
+];
+
+const activeItem = ref("contact");
+</script>
