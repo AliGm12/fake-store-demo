@@ -16,7 +16,19 @@
       </div>
 
       <div v-show="isCategoryOpen" class="flex flex-col gap-3 mt-1">
+        <template v-if="loading">
+          <div
+            v-for="i in 4"
+            :key="i"
+            class="flex items-center justify-end gap-3"
+          >
+            <USkeleton class="w-4 h-4 rounded shrink-0" />
+            <USkeleton class="h-3 grow" />
+            <USkeleton class="w-6 h-6 rounded-md shrink-0" />
+          </div>
+        </template>
         <label
+          v-else
           v-for="category in categoryCounts"
           :key="category.category"
           class="flex items-center justify-end gap-3 cursor-pointer group"
@@ -34,7 +46,7 @@
                 ? 'text-[#344456]'
                 : 'text-[#647E9A]'
             "
-            class="text-[12px] text-right flex-grow"
+            class="text-[12px] text-right grow"
           >
             {{ category.category }}
           </span>
@@ -62,6 +74,7 @@ interface CategoryCount {
 }
 defineProps<{
   categoryCounts: CategoryCount[];
+  loading?: boolean;
 }>();
 
 const selectedCategories = defineModel<string[]>("selectedCategories");
