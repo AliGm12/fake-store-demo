@@ -2,7 +2,6 @@
   <nav
     class="flex items-center gap-6 font-medium text-[15px] text-nowrap drop-shadow-[0_2px_2px_rgba(0,0,0,0.08)]"
   >
-    <!--change to button due to static routes-->
     <button
       v-for="item in navItems"
       :key="item.key"
@@ -11,7 +10,7 @@
       :class="
         activeItem === item.key ? 'text-(--secondary-color)' : 'text-[#0A2A51]'
       "
-      @click="activeItem = item.key"
+      @click="handleClick(item)"
     >
       <component :is="item.icon" :size="14" />
       <span class="cursor-pointer">{{ item.label }}</span>
@@ -32,12 +31,26 @@ import {
   Phone,
 } from "~/components/icons";
 
-const navItems = [
-  { key: "products", label: "لیست محصولات", icon: Blocks },
+interface NavItem {
+  key: string;
+  label: string;
+  icon: unknown;
+  to?: string;
+}
+
+const navItems: NavItem[] = [
+  { key: "products", label: "لیست محصولات", icon: Blocks, to: "/" },
   { key: "consulting", label: "دریافت مشاوره", icon: BookOpen },
   { key: "faq", label: "سوالات متداول", icon: MessageCircleQuestion },
   { key: "contact", label: "تماس با ما", icon: Phone },
 ];
 
-const activeItem = ref("contact");
+const activeItem = useState<string>("nav-active-item", () => "contact");
+
+function handleClick(item: NavItem) {
+  activeItem.value = item.key;
+  if (item.to) {
+    navigateTo(item.to);
+  }
+}
 </script>

@@ -17,6 +17,7 @@
       </h3>
 
       <AppButton
+        @click="navigateTo(`/products/${product.id}`)"
         class="py-2 border border-[#E9EDF5] bg-transparent text-[#E9EDF5]"
       >
         <span class="text-xs md:text-sm text-(--secondary-color) text-nowrap"

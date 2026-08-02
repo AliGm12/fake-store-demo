@@ -30,5 +30,7 @@ export {
   ArrowDown,
   ArrowUp,
   XIcon,
+  Home,
+  ZoomIn,
 } from "lucide-vue-next";
 export { TelegramIcon } from "vue3-simple-icons";

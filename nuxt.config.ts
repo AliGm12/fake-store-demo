@@ -26,5 +26,9 @@ export default defineNuxtConfig({
       path: "~/components/products",
       pathPrefix: false,
     },
+    {
+      path: "~/components/product",
+      pathPrefix: false,
+    },
   ],
 });
