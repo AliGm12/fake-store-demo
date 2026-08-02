@@ -10,9 +10,9 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["types"],
   },
-  css: ["~/assets/styles/main.scss"],
+  css: ["~/assets/styles/main.css"],
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/ui"],
   components: [
     {
       path: "~/components/common",

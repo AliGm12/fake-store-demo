@@ -1,4 +1,11 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
 @import "./fonts.css";
+:root {
+  --ui-radius: 0.25rem;
+  --secondary-color: #e20054;
+}
 
 html,
 body {
