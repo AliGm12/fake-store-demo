@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex items-center gap-6 font-medium text-[15px] text-nowrap drop-shadow-[0_2px_2px_rgba(0,0,0,0.08)] dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]"
+    class="flex items-center gap-4 md:gap-6 font-medium text-[15px] text-nowrap drop-shadow-[0_2px_2px_rgba(0,0,0,0.08)] dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]"
   >
     <button
       v-for="item in navItems"

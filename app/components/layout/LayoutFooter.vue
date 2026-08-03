@@ -74,12 +74,12 @@
       >
         <img
           src="/images/footer/enamad.png"
-          class="h-[72px] w-[72px] bg-white rounded-xl p-2"
+          class="h-18 w-18 bg-white dark:bg-gray-400 rounded-xl p-2"
           alt="نماد اعتماد"
         />
         <img
           src="/images/footer/samandehi.png"
-          class="h-[72px] w-[72px] bg-white rounded-xl p-2"
+          class="h-18 w-18 bg-white dark:bg-gray-400 rounded-xl p-2"
           alt="ساماندهی"
         />
       </div>
