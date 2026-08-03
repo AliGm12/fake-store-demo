@@ -6,11 +6,12 @@
   --ui-radius: 0.25rem;
   --secondary-color: #e20054;
   --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --default-font-family: "YekanBakh", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html,
 body {
-  font-family: "YekanBakh", sans-serif;
+  font-family: var(--default-font-family);
   direction: rtl;
   margin: 0;
   padding: 0;
