@@ -39,7 +39,7 @@
       >
         <template #actions>
           <AppButton
-            class="border border-red-500 bg-transparent text-red-500 hover:bg-red-50"
+            class="border border-red-500 dark:border-red-500 bg-transparent text-red-500 hover:bg-red-50 dark:hover:bg-red-950"
             size="sm"
             @click="refresh()"
           >

@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex items-center gap-2 text-xs sm:text-sm text-[#6783A0]">
+  <nav class="flex items-center gap-2 text-xs sm:text-sm text-(--secondary-text-color) dark:text-gray-500">
     <NuxtLink
       to="/"
       class="flex items-center hover:text-(--secondary-color) transition"
@@ -19,7 +19,7 @@
     <ChevronLeft :size="14" />
 
     <span
-      class="font-bold text-ellipsis text-nowrap overflow-hidden min-w-0 max-w-40 sm:max-w-none block"
+      class="font-bold text-ellipsis text-nowrap overflow-hidden min-w-0 max-w-40 sm:max-w-none block text-gray-700 dark:text-gray-300"
     >
       {{ product.title }}
     </span>

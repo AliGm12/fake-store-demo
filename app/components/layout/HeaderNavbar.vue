@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex items-center gap-6 font-medium text-[15px] text-nowrap drop-shadow-[0_2px_2px_rgba(0,0,0,0.08)]"
+    class="flex items-center gap-6 font-medium text-[15px] text-nowrap drop-shadow-[0_2px_2px_rgba(0,0,0,0.08)] dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]"
   >
     <button
       v-for="item in navItems"
@@ -8,7 +8,9 @@
       type="button"
       class="relative flex items-center gap-2"
       :class="
-        activeItem === item.key ? 'text-(--secondary-color)' : 'text-[#0A2A51]'
+        activeItem === item.key
+          ? 'text-(--secondary-color)'
+          : 'text-[#0A2A51] dark:text-gray-300'
       "
       @click="handleClick(item)"
     >

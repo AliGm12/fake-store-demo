@@ -11,13 +11,13 @@
     <!-- Loading -->
     <template v-if="productLoading">
       <div
-        class="bg-white shadow-(--card-shadow) rounded-3xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 w-full"
+        class="bg-white dark:bg-gray-900 shadow-(--card-shadow) rounded-3xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 w-full"
       >
         <USkeleton class="h-5 w-2/3 sm:h-7" />
         <USkeleton class="w-full h-56 sm:h-80 rounded-2xl" />
       </div>
       <div
-        class="bg-white shadow-(--card-shadow) rounded-3xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5"
+        class="bg-white dark:bg-gray-900 shadow-(--card-shadow) rounded-3xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5"
       >
         <USkeleton class="h-5 w-24" />
         <div class="flex flex-col gap-3">

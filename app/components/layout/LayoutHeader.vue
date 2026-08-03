@@ -1,10 +1,10 @@
 <template>
   <div
-    class="relative bg-white rounded-2xl h-30 flex items-center justify-between gap-5 px-5 md:px-20 lg:px-40 py-4"
+    class="relative bg-white dark:bg-gray-900 rounded-2xl h-30 flex items-center justify-between gap-5 px-5 md:px-20 lg:px-40 py-4"
   >
     <div class="lg:block w-26.75">
       <AppButton
-        class="sm:hidden w-11 h-11 p-0 bg-white border border-(--secondary-color) text-(--secondary-color) rounded-xl hover:bg-pink-50"
+        class="sm:hidden w-10 h-10 p-0 bg-white dark:bg-gray-900 border border-(--secondary-color) text-(--secondary-color) rounded-lg hover:bg-pink-50 dark:hover:bg-gray-800"
         @click="mobileOpen = !mobileOpen"
       >
         <MenuIcon :size="14" />
@@ -19,7 +19,7 @@
     </AppButton>
 
     <AppButton
-      class="sm:hidden w-11 h-11 p-0 bg-transparent border border-(--secondary-color) text-(--secondary-color) rounded-xl hover:bg-pink-50"
+      class="sm:hidden w-10 h-10 p-0 bg-transparent border border-(--secondary-color) text-(--secondary-color) rounded-lg hover:bg-pink-50 dark:hover:bg-gray-800"
     >
       <PhoneCall class="text-(--secondary-color)" :size="18" />
     </AppButton>
@@ -34,7 +34,7 @@
     >
       <div
         v-if="mobileOpen"
-        class="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-lg p-5 sm:hidden z-50"
+        class="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-900 rounded-2xl shadow-lg dark:shadow-black/40 p-5 sm:hidden z-50"
       >
         <HeaderNavbar
           class="flex-col items-start gap-4"

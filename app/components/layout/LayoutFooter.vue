@@ -1,34 +1,34 @@
 <template>
-  <footer dir="rtl" class="rounded-2xl overflow-hidden bg-white">
+  <footer dir="rtl" class="rounded-2xl overflow-hidden bg-white dark:bg-gray-900">
     <div class="grid grid-cols-3 sm:grid-cols-5 gap-10 px-16 py-10">
       <div class="col-span-2 hidden sm:flex items-end">
-        <div class="mb-[10%] text-[13px]">
+        <div class="mb-[10%] text-[13px] text-gray-700 dark:text-gray-300">
           هفت روز هفته از ۸ صبح تا ۱۲ شب پاسخگو هستیم
         </div>
       </div>
       <div>
-        <h3 class="font-bold mb-6">دسترسی سریع</h3>
+        <h3 class="font-bold mb-6 text-gray-900 dark:text-gray-100">دسترسی سریع</h3>
 
-        <ul class="space-y-4 text-[13px] text-gray-600">
-          <li class="text-pink-500">درباره ما</li>
+        <ul class="space-y-4 text-[13px] text-gray-600 dark:text-gray-400">
+          <li class="text-pink-500 dark:text-pink-400">درباره ما</li>
           <li>بلاگ</li>
           <li>تماس با ما</li>
           <li>خدمات پس از فروش</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold mb-6">راهنمای سایت</h3>
+        <h3 class="font-bold mb-6 text-gray-900 dark:text-gray-100">راهنمای سایت</h3>
 
-        <ul class="space-y-4 text-[13px] text-gray-600">
+        <ul class="space-y-4 text-[13px] text-gray-600 dark:text-gray-400">
           <li>قوانین و مقررات</li>
           <li>دریافت مشاوره</li>
           <li>انتقادات و پیشنهادات</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold mb-6">شبکه‌های اجتماعی</h3>
+        <h3 class="font-bold mb-6 text-gray-900 dark:text-gray-100">شبکه‌های اجتماعی</h3>
 
-        <ul class="space-y-4 text-sm text-gray-600">
+        <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
           <li
             v-for="social in socialMediaList"
             :key="social.name"
@@ -46,23 +46,23 @@
     </div>
 
     <div
-      class="bg-[#F8F9FC] rounded-t-2xl px-16 py-8 flex flex-col gap-7 items-center justify-between relative shadow-[0_2px_2px_0_rgba(0,0,0,0.08)]"
+      class="bg-[#F8F9FC] dark:bg-gray-800 rounded-t-2xl px-16 py-8 flex flex-col gap-7 items-center justify-between relative shadow-[0_2px_2px_0_rgba(0,0,0,0.08)] dark:shadow-[0_2px_2px_0_rgba(0,0,0,0.3)]"
     >
-      <p class="text-sm text-gray-500 text-center max-w-72 leading-6">
+      <p class="text-sm text-gray-500 dark:text-gray-400 text-center max-w-72 leading-6">
         تمامی حقوق مادی و معنوی این وبسایت متعلق به می‌باشد و هر گونه کپی برداری
         پیگرد قانونی دارد.
       </p>
       <!-- Social icons -->
       <div class="flex gap-6">
-        <a
+    <a        
           v-for="social in socialLinks"
           :key="social.name"
           :href="social.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex h-6 w-6 items-center justify-center rounded-full bg-[#F180A9] text-white transition-all duration-200 hover:-translate-y-0.5"
+          class="flex h-6 w-6 items-center justify-center rounded-full bg-[#F180A9] dark:bg-pink-800 text-white transition-all duration-200 hover:-translate-y-0.5"
           :class="{
-            '!bg-[#E20054]': social.active,
+            'bg-(--secondary-color)! dark:bg-pink-500!': social.active,
           }"
         >
           <component :is="social.icon" :size="14" />
@@ -109,17 +109,17 @@ const socialMediaList: SocialLink[] = [
   {
     name: "تلگرام",
     icon: TelegramIcon,
-    color: "#6783A0",
+    color: "var(--secondary-text-color)",
   },
   {
     name: "اینستاگرام",
     icon: Instagram,
-    color: "#6783A0",
+    color: "var(--secondary-text-color)",
   },
   {
     name: "لینکدین",
     icon: Linkedin,
-    color: "#6783A0",
+    color: "var(--secondary-text-color)",
   },
 ];
 
