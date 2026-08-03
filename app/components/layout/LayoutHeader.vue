@@ -4,12 +4,24 @@
   >
     <div
       @click="toggleDark"
-      size="sm"
-      class="absolute top-3 w-10 right-3"
+      class="absolute top-3 right-3 w-10 flex items-center justify-center"
     >
-    <Moon v-if="colorMode.value === 'light'" :size="16" />
-    <Sun class="text-(--secondary-color)" v-else :size="16" />
-  </div>
+      <ClientOnly>
+        <Moon
+          v-if="colorMode.value === 'light'"
+          :size="20"
+          class="text-(--heading-color) cursor-pointer"
+        />
+        <Sun
+          v-else
+          :size="20"
+          class="text-(--secondary-color) cursor-pointer"
+        />
+        <template #fallback>
+          <div class="w-5 h-5" />
+        </template>
+      </ClientOnly>
+    </div>
 
     <div class="lg:block w-26.75">
       <AppButton
@@ -59,7 +71,7 @@ import { MenuIcon, PhoneCall, Moon, Sun } from "~/components/icons";
 const colorMode = useColorMode();
 
 function toggleDark() {
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
+  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
 }
 
 const mobileOpen = ref(false);
