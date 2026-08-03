@@ -34,5 +34,7 @@ export {
   ZoomIn,
   Moon,
   Sun,
+  RotateCcw,
+  SearchX,
 } from "lucide-vue-next";
 export { TelegramIcon } from "vue3-simple-icons";

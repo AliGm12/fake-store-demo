@@ -44,12 +44,34 @@
       "
     >
       <template #actions>
-        <UButton color="error" variant="outline" size="sm" @click="refresh()">
+        <AppButton
+          class="outline outline-(--secondary-color) text-(--secondary-color) bg-transparent"
+          size="sm"
+          @click="refresh()"
+        >
           تلاش مجدد
-        </UButton>
+        </AppButton>
       </template>
     </UAlert>
-    <template v-else-if="product">
+    <UAlert
+      v-else-if="!product"
+      color="warning"
+      variant="soft"
+      icon="i-lucide-search-x"
+      title="محصول یافت نشد"
+      description="محصولی با این شناسه وجود ندارد."
+    >
+      <template #actions>
+        <AppButton
+          class="outline outline-amber-300 bg-transparent"
+          size="sm"
+          @click="refresh()"
+        >
+          تلاش مجدد
+        </AppButton>
+      </template>
+    </UAlert>
+    <template v-else>
       <ProductImageCard :product="product" />
 
       <ProductSpecifications :product="product" />
