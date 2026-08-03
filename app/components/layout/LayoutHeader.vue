@@ -2,6 +2,15 @@
   <div
     class="relative bg-white dark:bg-gray-900 rounded-2xl h-30 flex items-center justify-between gap-5 px-5 md:px-20 lg:px-40 py-4"
   >
+    <div
+      @click="toggleDark"
+      size="sm"
+      class="absolute top-3 w-10 right-3"
+    >
+    <Moon v-if="colorMode.value === 'light'" :size="16" />
+    <Sun class="text-(--secondary-color)" v-else :size="16" />
+  </div>
+
     <div class="lg:block w-26.75">
       <AppButton
         class="sm:hidden w-10 h-10 p-0 bg-white dark:bg-gray-900 border border-(--secondary-color) text-(--secondary-color) rounded-lg hover:bg-pink-50 dark:hover:bg-gray-800"
@@ -46,7 +55,12 @@
 </template>
 
 <script setup lang="ts">
-import { MenuIcon, PhoneCall } from "~/components/icons";
+import { MenuIcon, PhoneCall, Moon, Sun } from "~/components/icons";
+const colorMode = useColorMode();
+
+function toggleDark() {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
+}
 
 const mobileOpen = ref(false);
 </script>

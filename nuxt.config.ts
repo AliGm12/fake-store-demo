@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/styles/main.css"],
   devtools: { enabled: true },
-  modules: ["@nuxt/ui"],
+  modules: ["@nuxt/ui", "@nuxtjs/color-mode"],
   components: [
     {
       path: "~/components/common",

@@ -32,5 +32,7 @@ export {
   XIcon,
   Home,
   ZoomIn,
+  Moon,
+  Sun,
 } from "lucide-vue-next";
 export { TelegramIcon } from "vue3-simple-icons";
