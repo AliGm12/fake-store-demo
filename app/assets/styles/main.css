@@ -6,7 +6,12 @@
   --ui-radius: 0.25rem;
   --secondary-color: #e20054;
   --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --filter-option-active-color: #344456;
+  --filter-option-inactive-color: #647e9a;
+  --secondary-text-color: #6783A0;
+  --heading-color: #445a74;
   --default-font-family: "YekanBakh", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --main-bg-color: #e9edf5;
 }
 
 html,
@@ -15,5 +20,5 @@ body {
   direction: rtl;
   margin: 0;
   padding: 0;
-  background-color: #e9edf5;
+  background-color: var(--main-bg-color);
 }
